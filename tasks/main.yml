@@ -1,7 +1,7 @@
 ---
 # tasks file for beat
 
-- name: # Include per-environment variables
+- name: Include per-environment variables
   include_vars: '{{ item }}'
   with_first_found:
     - files:
@@ -15,4 +15,4 @@
       paths: '../vars'
 
 - name: Include os file
-  include: "{{ ansible_os_family }}.yml"
+  include_tasks: "{{ ansible_os_family }}.yml"
